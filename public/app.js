@@ -2279,7 +2279,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             if (game.hasEnded()) return;
 
             if (colors.check(color)) {
-                game.score++;
                 clearTimeout(timeout);
                 game.levelUp();
                 colors.update();
@@ -2330,6 +2329,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         loadGameComponents: _mithril2.default.prop(false),
         hasEnded: _mithril2.default.prop(false),
         levelUp: function levelUp() {
+            game.score++;
             time = time - game.score * 10;
 
             if (howManyColors >= colors.list.length) return;
